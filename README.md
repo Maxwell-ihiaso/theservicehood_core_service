@@ -86,3 +86,13 @@ myproject/
 - **test/**: Contains unit and integration tests for your project. You might also organize tests by the package or feature in this folder.
 
 This structure is flexible and can be modified depending on the scale and nature of your project.
+
+### **How To Start Application**
+
+The application requires keycloak service to be up and running. To run locally simply 
+
+```shell
+
+docker-compose --env-file /path/to/.env up --build
+
+```
