@@ -1,4 +1,20 @@
-# Project Structure
+# The Service Hood
+
+### **INTRODUCTION**
+
+- **Business Name**: TheServiceHood
+- **Purpose**: To connect service seekers with reliable service providers, starting in Nigeria and scaling globally.
+- **Vision**: To create a seamless and trusted ecosystem for accessing services across the world.
+- **Mission**: Empower individuals and businesses to connect with the right services anytime, anywhere.
+
+### **OBJECTIVES**
+
+1. Enable users to find and book nearby service providers easily.
+2. Provide ratings, reviews, and chat features to improve transparency and communication.
+3. Offer location-based features for navigation and service matching.
+4. Scale the platform globally with support for multi-language and region-specific services.
+
+### **Project Structure**
 
 Folder structure for this project generally focuses on maintainability, scalability, and clarity. Below is the folder structure for this Go project, using the standard conventions, along with an explanation of each folder's role:
 
