@@ -40,16 +40,13 @@ func (ks *KeycloakService) Login(w http.ResponseWriter, r *http.Request) {
 	if err := json.NewDecoder(r.Body).Decode(&rq); err != nil {
 		w.WriteHeader(http.StatusBadRequest)
 		res.Error = err.Error()
-		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
-
-	jwt, err := ks.Keycloak.Gocloak.Login(context.Background(), ks.Keycloak.ClientId, ks.Keycloak.ClientSecret, ks.Keycloak.Realm, rq.Username, rq.Password)
+	jwt, err := ks.Keycloak.Gocloak.Login(context.TODO(), ks.Keycloak.ClientId, ks.Keycloak.ClientSecret, ks.Keycloak.Realm, rq.Username, rq.Password)
 
 	if err != nil {
 		w.WriteHeader(http.StatusForbidden)
 		res.Error = err.Error()
-		http.Error(w, err.Error(), http.StatusForbidden)
 		return
 	}
 

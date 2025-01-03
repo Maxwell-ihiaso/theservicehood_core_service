@@ -33,6 +33,7 @@ func newServer(host, port string, kc *keycloak.Keycloak) *httpServer {
 	keycloakService := service.KeycloakService{Keycloak: kc}
 
 	// Unprotected paths
+	noAuthRouter.HandleFunc("/healthcheck", healthHandler).Methods(http.MethodGet)
 	noAuthRouter.HandleFunc("/login", keycloakService.Login).Methods(http.MethodPost)
 
 	// Protected Paths
@@ -57,4 +58,11 @@ func newServer(host, port string, kc *keycloak.Keycloak) *httpServer {
 
 func (s *httpServer) listen() error {
 	return s.server.ListenAndServe()
+}
+
+func healthHandler(w http.ResponseWriter, r *http.Request) {
+	w.WriteHeader(http.StatusOK)
+	w.Write([]byte("\n==============================\n"))
+	w.Write([]byte("running...\n"))
+	w.Write([]byte("==============================\n"))
 }
